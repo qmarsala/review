@@ -11,7 +11,7 @@ namespace src
 {
     public class LinkedList<T>
     {
-        public Node<T> Head { get; private set; } = null;
+        public Node<T> Head { get; set; } = null;
 
         public Node<T> Traverse(Func<Node<T>, Node<T>, bool> findFn)
         {
@@ -74,9 +74,10 @@ namespace src
         public T Value { get; }
         public Node<T> Next { get; set; }
 
-        public Node(T value)
+        public Node(T value, Node<T> next = null)
         {
             Value = value;
+            Next = next;
         }
     }
 }
